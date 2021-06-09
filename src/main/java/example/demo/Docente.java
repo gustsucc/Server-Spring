@@ -6,10 +6,13 @@
 package example.demo;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
@@ -20,10 +23,21 @@ import javax.persistence.Id;
 @Entity
 public class Docente {
     @Id
+    @GeneratedValue
     private Long id;
     private String nombre;
     private String email;
     private Date nacimiento;
+    @OneToMany(mappedBy = "doc")
+    private List<Materia> materias;
+    
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
+    }
 
     public Docente() {
     }
