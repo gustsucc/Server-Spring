@@ -5,6 +5,7 @@
  */
 package example.demo;
 
+import java.sql.Blob;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -26,17 +27,35 @@ public class Docente {
     @GeneratedValue
     private Long id;
     private String nombre;
+    private String apellido;
     private String email;
     private Date nacimiento;
     @OneToMany(mappedBy = "doc")
     private List<Materia> materias;
+    private byte[] foto;
     
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
     public List<Materia> getMaterias() {
         return materias;
     }
 
     public void setMaterias(List<Materia> materias) {
         this.materias = materias;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public Docente() {
@@ -76,32 +95,51 @@ public class Docente {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.id);
-        return hash;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((nacimiento == null) ? 0 : nacimiento.hashCode());
+        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
             return false;
-        }
-        final Docente other = (Docente) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        Docente other = (Docente) obj;
+        if (apellido == null) {
+            if (other.apellido != null)
+                return false;
+        } else if (!apellido.equals(other.apellido))
             return false;
-        }
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        if (nacimiento == null) {
+            if (other.nacimiento != null)
+                return false;
+        } else if (!nacimiento.equals(other.nacimiento))
+            return false;
+        if (nombre == null) {
+            if (other.nombre != null)
+                return false;
+        } else if (!nombre.equals(other.nombre))
+            return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Docente{" + "id=" + id + ", nombre=" + nombre + ", email=" + email + ", nacimiento=" + nacimiento + '}';
+        return "Docente [apellido=" + apellido + ", email=" + email + ", id=" + id + ", nacimiento=" + nacimiento
+                + ", nombre=" + nombre + "]";
     }
     
 }
