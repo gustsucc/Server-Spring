@@ -5,15 +5,13 @@
  */
 package example.demo;
 
-import java.sql.Blob;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 
@@ -33,7 +31,17 @@ public class Docente {
     @OneToMany(mappedBy = "doc")
     private List<Materia> materias;
     private byte[] foto;
+    @OneToOne
+    Usuario usr;
     
+    public Usuario getUsr() {
+        return usr;
+    }
+
+    public void setUsr(Usuario usr) {
+        this.usr = usr;
+    }
+
     public byte[] getFoto() {
         return foto;
     }

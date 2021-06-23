@@ -1,17 +1,12 @@
 package example.demo;
 
-//import javax.persistence.Column;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.ManyToOne;
-//import javax.persistence.Table;
 
 @Entity
 public class Usuario {
     @Id
-    @GeneratedValue
-    
     private String login;
     private String clave;
 
@@ -67,8 +62,6 @@ public class Usuario {
     public String toString() {
         return "Usuario [clave=" + clave + ", login=" + login + "]";
     }
-
     public Usuario() {
     }
-    
 }
