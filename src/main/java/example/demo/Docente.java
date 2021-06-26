@@ -6,13 +6,10 @@
 package example.demo;
 
 import java.util.Date;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
@@ -51,14 +48,6 @@ public class Docente {
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
-    }
-
-    public List<Materia> getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(List<Materia> materias) {
-        this.materias = materias;
     }
 
     public String getApellido() {
