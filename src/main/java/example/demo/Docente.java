@@ -7,6 +7,8 @@ package example.demo;
 
 import java.util.Date;
 import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,12 +26,13 @@ public class Docente {
     @Id
     @GeneratedValue
     private Long id;
+    @Column(length = 30)
     private String nombre;
+    @Column(length = 30)
     private String apellido;
+    @Column(length = 30)
     private String email;
     private Date nacimiento;
-    @OneToMany(mappedBy = "doc")
-    private List<Materia> materias;
     private byte[] foto;
     @OneToOne
     Usuario usr;

@@ -1,10 +1,12 @@
 package example.demo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,14 +19,14 @@ public class Materia {
     private String sigla;
     @Column(name="nombre",length = 50)
     private String descrip;
-    @ManyToOne(optional = true)
-    private Docente doc;
-
-    public Docente getDoc() {
-        return doc;
+    @OneToMany(mappedBy = "mat")
+    private List<Grupo> grupos;
+    
+    public void setGrupos(List<Grupo> grupos) {
+        this.grupos = grupos;
     }
-    public void setDoc(Docente doc) {
-        this.doc = doc;
+    public List<Grupo> getGrupos() {
+        return grupos;
     }
     public Long getCodigo() {
         return codigo;

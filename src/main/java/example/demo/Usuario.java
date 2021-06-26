@@ -1,13 +1,16 @@
 package example.demo;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Usuario {
     @Id
+    @Column(length = 15)
     private String login;
+    @Column(length = 15)
     private String clave;
 
     public String getLogin() {
