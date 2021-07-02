@@ -8,3 +8,12 @@ target/classes/example/demo/RepoGrupos.class
 target/classes/example/demo/RepoNotas.class
 target/classes/example/demo/Materia.class
 target/classes/example/demo/Repo_Materias.class
+target/classes/application.properties
+target/classes/example/demo/Docente.class
+target/classes/example/demo/PruebaApplication.class
+target/classes/example/demo/Repo.class
+target/classes/example/demo/RepoUsuarios.class
+target/classes/example/demo/Usuario.class
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/test-classes/example/demo/PruebaApplicationTests.class
