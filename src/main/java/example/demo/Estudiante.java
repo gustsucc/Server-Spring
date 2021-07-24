@@ -23,8 +23,7 @@ public class Estudiante {
     private Usuario usr;
     @OneToMany(mappedBy = "est")
     private Set<Nota> calificaciones;
-    
-    
+        
     public Set<Nota> getCalificaciones() {
         return calificaciones;
     }
