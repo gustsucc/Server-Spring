@@ -22,7 +22,15 @@ public class Grupo {
     private Materia mat;
     @OneToMany(mappedBy = "grp")
     private Set<Nota> notas;
+    @ManyToOne
+    private Docente docen;
    
+    public Docente getDocen() {
+        return docen;
+    }
+    public void setDocen(Docente docen) {
+        this.docen = docen;
+    }
     public Set<Nota> getNotas() {
         return notas;
     }
