@@ -18,10 +18,12 @@ public class Grupo {
     private Integer gestion;
     @Column(nullable = false, length = 10)
     private String identificador;
+
     @ManyToOne(optional = false)
     private Materia mat;
     @OneToMany(mappedBy = "grp")
     private Set<Nota> notas;
+    
     @ManyToOne
     private Docente docen;
    

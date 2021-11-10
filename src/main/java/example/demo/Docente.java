@@ -34,8 +34,10 @@ public class Docente {
     private String email;
     private Date nacimiento;
     private byte[] foto;
+
     @OneToOne
     Usuario usr;
+    
     @OneToMany(mappedBy = "docen")
     Set<Grupo> grupos;
     

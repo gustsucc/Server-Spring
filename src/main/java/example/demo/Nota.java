@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.ManyToOne;
@@ -15,6 +16,7 @@ import org.springframework.lang.NonNull;
 @Table(indexes = @Index(columnList = "est_ru,grp_id,num",unique = true))
 public class Nota implements Serializable {
     @Id
+    @GeneratedValue
     private Long num;
     @ManyToOne
     private Estudiante est;
@@ -25,7 +27,7 @@ public class Nota implements Serializable {
     @NonNull
     private Float ponderacion;
     private Float nota;
-    
+
     public Long getNum() {
         return num;
     }

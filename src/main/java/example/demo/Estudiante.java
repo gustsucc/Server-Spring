@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -18,6 +19,15 @@ public class Estudiante {
     private String apellido;
     @Column(length = 30)
     private String email;
+    @ManyToOne
+    private Grupo grupo;
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
     private byte[] foto;
     @OneToOne
     private Usuario usr;
